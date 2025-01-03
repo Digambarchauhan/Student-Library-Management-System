@@ -1,27 +1,88 @@
-Introduction
-Student Library Management System ek software application hai jo library ke operations ko manage karne mein madad karta hai. Yah system library ke resources, jaise ki books, journals, aur other materials ko manage karne ke liye design kiya gaya hai.
+Aapka Student Library Management System ka code yeh hai:
 
-Functionalities
-1. *Book Management*: Books ko add, delete, update, aur search karne ki functionality.
-2. *Student Management*: Students ko add, delete, update, aur search karne ki functionality.
-3. *Borrowing aur Returning*: Books ko borrow aur return karne ki functionality, jismein automatic update of book status hota hai.
-4. *Fine Management*: Fines ko calculate aur manage karne ki functionality.
-5. *Reporting*: Books ki inventory, students ki information, aur borrowing history ki reports generate karne ki functionality.
+```
+Date: 1 September 2024
+Author: Digambar Chauhan
+Project: Student Library Management System
 
-Features
-1. *User-Friendly Interface*: Librarians aur students ke liye easy-to-use interface.
-2. *Search Functionality*: Books ko title, author, subject, ya keyword ke basis par search karne ki functionality.
-3. *Book Recommendation*: Students ko unke borrowing history ke basis par book recommendations dene ki functionality.
-4. *Notification System*: Students ko overdue books ya new book arrivals ke liye notifications dene ki functionality.
+class Library:
+    def __init__(self, listofBooks):
+        self.books = listofBooks
 
-Technical Requirements
-1. *Programming Language*: Python
-2. *Database Management System*: MySQL
-3. *Front-end Framework*: Tkinter ya PyQt
-4. *Operating System*: Windows ya Linux
+    def displayAvailableBooks(self):
+        print(f"\n{len(self.books)} AVAILABLE BOOKS ARE: ")
+        for book in self.books:
+            print(" ♦-- " + book)
+        print("\n")
 
-Benefits
-1. *Improved Efficiency*: Library ke operations ko automate karne se manual labor aur errors ko kam kiya ja sakta hai.
-2. *Enhanced User Experience*: Librarians aur students ke liye easy-to-use interface se user experience ko badhaya ja sakta hai.
-3. *Better Resource Management*: Books ki inventory ko optimize karne se resource management ko badhaya ja sakta hai.
-4. *Increased Productivity*: Reports aur notifications ko generate karne se staff ki productivity ko badhaya ja sakta hai. 
+    def borrowBook(self, name, bookname):
+        if bookname not in self.books:
+            print(f"{bookname} BOOK IS NOT AVAILABLE EITHER TAKEN BY SOMEONE ELSE, WAIT UNTIL HE RETURNED.\n")
+        else:
+            track.append({name: bookname})
+            print("BOOK ISSUED : THANK YOU KEEP IT WITH CARE AND RETURN ON TIME.\n")
+            self.books.remove(bookname)
+
+    def returnBook(self, bookname):
+        print("BOOK RETURNED : THANK YOU! \n")
+        self.books.append(bookname)
+
+    def donateBook(self, bookname):
+        print("BOOK DONATED : THANK YOU VERY MUCH, HAVE A GREAT DAY AHEAD.\n")
+        self.books.append(bookname)
+
+class Student():
+    def requestBook(self):
+        print("So, you want to borrow book!")
+        self.book = input("Enter name of the book you want to borrow: ")
+        return self.book
+
+    def returnBook(self):
+        print("So, you want to return book!")
+        name = input("Enter your name: ")
+        self.book = input("Enter name of the book you want to return: ")
+        if {name: self.book} in track:
+            track.remove({name: self.book})
+        return self.book
+
+    def donateBook(self):
+        print("Okay! you want to donate book!")
+        self.book = input("Enter name of the book you want to donate: ")
+        return self.book
+
+if __name__ == "__main__":
+    Delhilibrary = Library(["vistas", "invention", "rich&poor", "indian", "macroeconomics", "microeconomics"])
+    student = Student()
+    track = []
+    print("\t\t\t\t\t\t\t♦♦♦♦♦♦♦ WELCOME TO THE DELHI LIBRARY ♦♦♦♦♦♦♦\n")
+    print("""CHOOSE WHAT YOU WANT TO DO:-\n1. Listing all books\n2. Borrow books\n3. Return books\n4. Donate books\n5. Track books\n6. exit the library\n""")
+    while (True):
+        try:
+            usr_response = int(input("Enter your choice: "))
+            if usr_response == 1:
+                Delhilibrary.displayAvailableBooks()
+            elif usr_response == 2:
+                Delhilibrary.borrowBook(input("Enter your name: "), student.requestBook())
+            elif usr_response == 3:
+                Delhilibrary.returnBook(student.returnBook())
+            elif usr_response == 4:
+                Delhilibrary.donateBook(student.donateBook())
+            elif usr_response == 5:
+                for i in track:
+                    for key, value in i.items():
+                        holder = key
+                        book = value
+                        print(f"{book} book is taken/issued by {holder}.")
+                print("\n")
+                if len(track) == 0:
+                    print("NO BOOKS ARE ISSUED!. \n")
+            elif usr_response == 6:
+                print("THANK YOU ! \n")
+                exit()
+            else:
+                print("INVALID INPUT! \n")
+        except Exception as e:
+            print(f"{e}---> INVALID INPUT! \n")
+```
+
+Aapka code ab taiyaar hai!

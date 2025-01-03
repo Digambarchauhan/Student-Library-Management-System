@@ -1,7 +1,7 @@
 # PROJECT--- STUDENT LIBRARY MANAGEMENT SYSTEM
 
 ```
-Date: 18 January 2021
+Date: 1 September 2024
 Author: Digambar Chauhan
 Project: Student Library Management System
 

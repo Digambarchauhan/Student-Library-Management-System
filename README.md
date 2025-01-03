@@ -24,4 +24,4 @@ Benefits
 1. *Improved Efficiency*: Library ke operations ko automate karne se manual labor aur errors ko kam kiya ja sakta hai.
 2. *Enhanced User Experience*: Librarians aur students ke liye easy-to-use interface se user experience ko badhaya ja sakta hai.
 3. *Better Resource Management*: Books ki inventory ko optimize karne se resource management ko badhaya ja sakta hai.
-4. *Increased Productivity*: Reports aur notifications ko generate karne se staff ki productivity ko badhaya ja sakta hai.
+4. *Increased Productivity*: Reports aur notifications ko generate karne se staff ki productivity ko badhaya ja sakta hai. 

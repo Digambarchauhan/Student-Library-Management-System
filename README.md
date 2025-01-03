@@ -1,85 +1,54 @@
-Student library management system
-```
-Date: 1 September 2024
-Author: Digambar Chauhan
-Project: Student Library Management System
+# Build Library Management System | Python & PyQt5
 
-class Library:
-    def __init__(self, listofBooks):
-        self.books = listofBooks
+- get the course from here : 
+    https://www.udemy.com/build-library-management-system-python-pyqt5/?couponCode=YOUTUBE2019
 
-    def displayAvailableBooks(self):
-        print(f"\n{len(self.books)} AVAILABLE BOOKS ARE: ")
-        for book in self.books:
-            print(" ♦-- " + book)
-        print("\n")
+- In this course you'll learn how to build a Library System with PyQt5 and Python
+  PyQt5 is one of the best frameworks for developing desktop applications that looks awesome 
+  In this course I'll be developing on a my Mac machine, but you should be able to follow along if you're on a Windows or Linux.  I'll show you how to download and install Python and PyQt5
+  You'll be able to build Desktop Applications  and simple business Applications when you're finished with this course.
 
-    def borrowBook(self, name, bookname):
-        if bookname not in self.books:
-            print(f"{bookname} BOOK IS NOT AVAILABLE EITHER TAKEN BY SOMEONE ELSE, WAIT UNTIL HE RETURNED.\n")
-        else:
-            track.append({name: bookname})
-            print("BOOK ISSUED : THANK YOU KEEP IT WITH CARE AND RETURN ON TIME.\n")
-            self.books.remove(bookname)
+- we will build a library system with:
+    - adding new books
+    - adding books categories
+    - adding books Author
+    - adding books Publisher
+    - adding day to day operations for rent or retrieving books
+    - Generate Excel reports from our data
+    - Adding new users with user login  and editing user data
 
-    def returnBook(self, bookname):
-        print("BOOK RETURNED : THANK YOU! \n")
-        self.books.append(bookname)
 
-    def donateBook(self, bookname):
-        print("BOOK DONATED : THANK YOU VERY MUCH, HAVE A GREAT DAY AHEAD.\n")
-        self.books.append(bookname)
 
-class Student():
-    def requestBook(self):
-        print("So, you want to borrow book!")
-        self.book = input("Enter name of the book you want to borrow: ")
-        return self.book
+- WHAT DO YOU NEED TO TAKE THIS COURSE?
+    - You don't need any tools or special skills to take this course. I'll show you how to download and install everything you'll need for free (PyQt, Python, and the Pycharm). 
 
-    def returnBook(self):
-        print("So, you want to return book!")
-        name = input("Enter your name: ")
-        self.book = input("Enter name of the book you want to return: ")
-        if {name: self.book} in track:
-            track.remove({name: self.book})
-        return self.book
+- DO I NEED TO KNOW PYTHON TO TAKE THIS COURSE?
+    - simple python basics!  it's a good idea to learn Python if you want to use PyQt5. But you don't have to know advanced Python to take this course. I'll walk you through everything you need to know.
+      Building desktop applications with PyQt5 is very easy , and the course will make it very fun
 
-    def donateBook(self):
-        print("Okay! you want to donate book!")
-        self.book = input("Enter name of the book you want to donate: ")
-        return self.book
 
-if __name__ == "__main__":
-    Delhilibrary = Library(["vistas", "invention", "rich&poor", "indian", "macroeconomics", "microeconomics"])
-    student = Student()
-    track = []
-    print("\t\t\t\t\t\t\t♦♦♦♦♦♦♦ WELCOME TO THE DELHI LIBRARY ♦♦♦♦♦♦♦\n")
-    print("""CHOOSE WHAT YOU WANT TO DO:-\n1. Listing all books\n2. Borrow books\n3. Return books\n4. Donate books\n5. Track books\n6. exit the library\n""")
-    while (True):
-        try:
-            usr_response = int(input("Enter your choice: "))
-            if usr_response == 1:
-                Delhilibrary.displayAvailableBooks()
-            elif usr_response == 2:
-                Delhilibrary.borrowBook(input("Enter your name: "), student.requestBook())
-            elif usr_response == 3:
-                Delhilibrary.returnBook(student.returnBook())
-            elif usr_response == 4:
-                Delhilibrary.donateBook(student.donateBook())
-            elif usr_response == 5:
-                for i in track:
-                    for key, value in i.items():
-                        holder = key
-                        book = value
-                        print(f"{book} book is taken/issued by {holder}.")
-                print("\n")
-                if len(track) == 0:
-                    print("NO BOOKS ARE ISSUED!. \n")
-            elif usr_response == 6:
-                print("THANK YOU ! \n")
-                exit()
-            else:
-                print("INVALID INPUT! \n")
-        except Exception as e:
-            print(f"{e}---> INVALID INPUT! \n")
-```
+
+-What you’ll learn
+    - Installing Python
+    - Installing PyQt5
+    - Installing MySQL Server
+    - Design nice desktop applications with QtDesigner
+    - Styling desktop applications with CSS
+    - Design a database using mysql workbench
+    - Connecting to mysql database with python
+    - inserting , selecting , updating , deleting database data from our app
+    - Adding project themes and change between them easly
+    - Adding new users
+    - Updating user data
+    - Login at startup
+
+
+
+
+
+- Are there any course requirements or prerequisites?
+    - simple python skills is needed
+
+- Who this course is for:
+    - This course is aimed towards absolute beginners who want to learn how to  build desktop applications with PyQt5 and Python
+

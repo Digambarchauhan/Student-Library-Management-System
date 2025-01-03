@@ -51,7 +51,7 @@ class Student():
         return self.book
 
 if __name__ == "__main__":
-    Delhilibrary = Library(["vistas", "invention", "rich&poor", "indian", "macroeconomics", "microeconomics"])
+    Lucknow library = Library(["vistas", "invention", "rich&poor", "indian", "macroeconomics", "microeconomics"])
     student = Student()
     track = []
     print("\t\t\t\t\t\t\t♦♦♦♦♦♦♦ WELCOME TO THE DELHI LIBRARY ♦♦♦♦♦♦♦\n")
